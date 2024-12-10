@@ -1,0 +1,27 @@
+{
+  "imports": {
+    "@hono/hono": "jsr:@hono/hono@^4.6.9"
+  },
+  "tasks": {
+    "start": "deno run --allow-net ./src/index.ts",
+    "dev": "deno run --allow-net --watch ./src/index.ts",
+    "format": "deno fmt ./src",
+    "format:check": "deno fmt --check ./src",
+    "lint": "deno lint ./src",
+    "lint:fix": "deno lint --write ./src"
+  },
+  "fmt": {
+    "semiColons": true,
+    "singleQuote": true,
+    "lineWidth": 120
+  },
+  "lint": {
+    "include": ["src/"],
+    "exclude": ["src/testdata/", "src/fixtures/**/*.ts"],
+    "rules": {
+      "tags": ["recommended"],
+      "include": ["ban-untagged-todo"],
+      "exclude": ["no-unused-vars"]
+    }
+  }
+}
